@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Maison</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100vw;
+      font-family: sans-serif;
+      background: #1e1e1e;
+      color: #fff;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      height: 100vh;
+      width: 100vw;
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .calendar {
+      grid-row: 1 / 3;
+      grid-column: 1 / 2;
+    }
+
+    .weather, .notes {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    iframe {
+      border: none;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid-container">
+
+    <!-- Agenda (left, full height) -->
+    <div class="calendar">
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FParis&showPrint=0&mode=MONTH&src=aXViMGI4NnE5NnE2NGU5NWs3aTFvYmcwYjBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZW4uamFwYW5lc2UjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23E4C441&color=%237986CB" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
+
+    <!-- Weather (top right) -->
+    <div class="weather">
+      <iframe src="https://www.meteoblue.com/en/weather/widget/three/paris_france_2988507?geoloc=fixed&nocurrent=1&noforecast=0&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=image"
+        scrolling="no"
+        sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox">
+      </iframe>
+    </div>
+
+    <!-- Notes (bottom right) -->
+    <div class="notes">
+        <iframe src="https://docs.google.com/document/d/e/2PACX-1vRLlCQPAA4RExx--nixpw3dYTbfWM9ElqZYWMka9oOVdXHrhPSwg-Q41Ec1ATkZnfKQ3uu5KyW0pI7z/pub?embedded=true"></iframe>
+
+      </div>
+       
+ </div>
+
+  </div>
+
+</body>
+</html>
+
